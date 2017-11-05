@@ -56,7 +56,7 @@ Rcpp::List dada_uniques(std::vector< std::string > seqs, std::vector<int> abunda
     if(seqs[index].length() < minlen) { minlen = seqs[index].length(); }
   }
   if(maxlen >= SEQLEN) { Rcpp::stop("Input sequences exceed the maximum allowed string length."); }
-  if(minlen <= KMER_SIZE) { Rcpp::stop("Input sequences must all be longer than the kmer-size (%i).", KMER_SIZE); }
+  if(minlen <= KMER_SIZE) { Rcpp::stop(("Input sequences must all be longer than the kmer-size (%i).", KMER_SIZE)); }
   
   // Check for presence of quality scores and their lengths
   bool has_quals = false;
