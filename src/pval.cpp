@@ -147,10 +147,10 @@ double compute_lambda_ts(Raw *raw, Sub *sub, unsigned int ncol, double *err_mat,
   // Now fix the ones where subs occurred
   for(s=0;s<sub->nsubs;s++) {
     pos0 = sub->pos[s];
-    std:string res3 = "CL: Bad pos0:" + std::to_string(pos0)+ "(len0=" + std::to_string(sub->len0)+".";
+    std::string res3= "CL: Bad pos0:" + std::to_string(pos0)+ "(len0=" + std::to_string(sub->len0)+".";
     if(pos0 < 0 || pos0 >= sub->len0) { Rcpp::stop(res3); }
     pos1 = sub->map[sub->pos[s]];
-    std:string res2 = "CL: Bad pos1:" + std::to_string(pos1)+ "(len1=" + std::to_string(len1)+".";
+    std::string res2 = "CL: Bad pos1:" + std::to_string(pos1)+ "(len1=" + std::to_string(len1)+".";
     if(pos1 < 0 || pos1 >= len1) { Rcpp::stop(res2); }
     
     nti0 = ((int) sub->nt0[s]) - 1;
